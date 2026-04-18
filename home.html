@@ -3,56 +3,202 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OP BOT | الرئيسية</title>
+    <title>OP BOT | الفخامة في الإدارة</title>
     <style>
-        :root { --main: #4ade80; --bg: #062b2b; --card: #0a3a3a; }
-        body { background: var(--bg); color: white; font-family: 'Segoe UI', sans-serif; margin: 0; line-height: 1.6; }
-        nav { background: #041f1f; padding: 15px 5%; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; border-bottom: 1px solid var(--main); }
-        .nav-links a { color: white; text-decoration: none; margin-left: 20px; font-weight: 500; }
-        .nav-links a:hover { color: var(--main); }
-        header { text-align: center; padding: 100px 20px; background: linear-gradient(180deg, #0d4d4d 0%, var(--bg) 100%); }
-        .btn-main { background: var(--main); color: black; padding: 15px 35px; text-decoration: none; border-radius: 50px; font-weight: bold; font-size: 1.2rem; display: inline-block; transition: 0.3s; }
-        .btn-main:hover { transform: scale(1.1); box-shadow: 0 0 20px var(--main); }
-        .container { max-width: 1000px; margin: auto; padding: 40px 20px; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
-        .card { background: var(--card); padding: 25px; border-radius: 15px; border-right: 5px solid var(--main); }
-        h2 { color: var(--main); margin-bottom: 25px; text-align: center; font-size: 2rem; }
+        :root { 
+            --main: #4ade80; 
+            --bg: #062b2b; 
+            --card: rgba(10, 58, 58, 0.7); /* شفافية بسيطة لشكل أفخم */
+            --accent: #14b8a6;
+        }
+
+        body { 
+            background: var(--bg); 
+            color: white; 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            margin: 0; 
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* خلفية متحركة خفيفة */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: radial-gradient(circle at 50% 50%, #0d4d4d 0%, var(--bg) 80%);
+            z-index: -1;
+        }
+
+        nav { 
+            background: rgba(4, 31, 31, 0.95); 
+            backdrop-filter: blur(10px); /* تأثير الزجاج الضبابي */
+            padding: 15px 8%; 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            position: sticky; 
+            top: 0; 
+            z-index: 1000; 
+            border-bottom: 2px solid var(--main);
+        }
+
+        .nav-links a { 
+            color: white; 
+            text-decoration: none; 
+            margin-right: 25px; 
+            font-weight: 600; 
+            transition: 0.3s;
+            font-size: 0.95rem;
+        }
+
+        .nav-links a:hover { color: var(--main); text-shadow: 0 0 10px var(--main); }
+
+        header { 
+            text-align: center; 
+            padding: 120px 20px; 
+            position: relative;
+        }
+
+        /* إضافة صورة اللوجو بجانب العنوان */
+        .logo-img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 3px solid var(--main);
+            margin-bottom: 20px;
+            box-shadow: 0 0 30px rgba(74, 222, 128, 0.3);
+        }
+
+        h1 { font-size: 3rem; margin-bottom: 10px; letter-spacing: -1px; }
+        
+        .hero-p { 
+            font-size: 1.3rem; 
+            color: #cbd5e1; 
+            max-width: 800px; 
+            margin: 20px auto 40px; 
+        }
+
+        .btn-main { 
+            background: var(--main); 
+            color: #062b2b; 
+            padding: 18px 45px; 
+            text-decoration: none; 
+            border-radius: 12px; 
+            font-weight: 800; 
+            font-size: 1.2rem; 
+            display: inline-block; 
+            transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
+            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+        }
+
+        .btn-main:hover { 
+            transform: translateY(-5px) scale(1.05); 
+            box-shadow: 0 0 30px var(--main); 
+        }
+
+        .container { max-width: 1100px; margin: auto; padding: 60px 20px; }
+
+        /* تنسيق الكروت بشكل أفخم */
+        .grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+            gap: 30px; 
+            margin-top: 40px;
+        }
+
+        .card { 
+            background: var(--card); 
+            padding: 35px; 
+            border-radius: 20px; 
+            border: 1px solid rgba(74, 222, 128, 0.1);
+            transition: 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card::before {
+            content: "";
+            position: absolute;
+            top: 0; right: 0; width: 5px; height: 100%;
+            background: var(--main);
+        }
+
+        .card:hover { 
+            background: rgba(10, 58, 58, 0.9); 
+            transform: translateY(-10px);
+            border-color: var(--main);
+        }
+
+        h2 { 
+            color: var(--main); 
+            margin-bottom: 40px; 
+            text-align: center; 
+            font-size: 2.2rem; 
+            position: relative;
+        }
+
+        h2::after {
+            content: "";
+            display: block;
+            width: 60px; height: 4px;
+            background: var(--main);
+            margin: 10px auto;
+            border-radius: 10px;
+        }
+
+        footer { 
+            background: #031616;
+            padding: 50px; 
+            color: #8b949e; 
+            border-top: 2px solid #0d4d4d;
+            margin-top: 100px;
+        }
+
+        /* لضمان التوافق مع الجوال */
+        @media (max-width: 768px) {
+            h1 { font-size: 2rem; }
+            nav { padding: 15px 5%; }
+            .nav-links a { margin-right: 15px; font-size: 0.8rem; }
+        }
     </style>
 </head>
 <body>
     <nav>
-        <div style="font-weight: bold; font-size: 1.5rem; color: var(--main);">OP BOT</div>
+        <div style="font-weight: 900; font-size: 1.7rem; color: var(--main); letter-spacing: 1px;">OP BOT</div>
         <div class="nav-links">
-            <a href="home.html">الرئيسية</a>
+            <a href="index.html">الرئيسية</a>
             <a href="commands.html">الأوامر</a>
         </div>
     </nav>
 
     <header>
+        <img src="logo.jpg" alt="OP BOT Logo" class="logo-img">
         <h1>بوت الألعاب والإدارة المتكامل 🚀</h1>
-        <p style="font-size: 1.2rem; color: #cbd5e1; max-width: 700px; margin: 20px auto;">أفضل حل تقني لسيرفرك، نظام بنكي، حماية متطورة، وأكثر من 60 أمر ترفيهي بين يديك.</p>
-        <a href="https://discord.com/oauth2/authorize?client_id=1494417994992975983&permissions=8&integration_type=0&scope=bot+applications.commands" class="btn-main" target="_blank">أضف البوت الآن</a>
+        <p class="hero-p">أفضل حل تقني لسيرفرك، نظام بنكي، حماية متطورة، وأكثر من 60 أمر ترفيهي بين يديك.</p>
+        <a href="https://discord.com/oauth2/authorize?client_id=1494417994992975983&permissions=8&integration_type=0&scope=bot+applications.commands" class="btn-main" target="_blank">إضافة إلى ديسكورد</a>
     </header>
 
     <div class="container">
-        <section>
-            <h2>🛡️ الشروط والأحكام</h2>
-            <div class="card">
+        <div class="grid">
+            <section class="card">
+                <h2>🛡️ الشروط والأحكام</h2>
                 <p>• يُمنع استخدام البوت في نشر محتوى مخالف لقوانين ديسكورد.</p>
                 <p>• محاولة التلاعب بنظام البنك (Glitch) تؤدي لحظر حسابك من البوت نهائياً.</p>
-                <p>• نحن نحتفظ بالحق في تحديث شروط الخدمة في أي وقت لضمان سلامة المستخدمين.</p>
-            </div>
-        </section>
+                <p>• نحن نحتفظ بالحق في تحديث شروط الخدمة لضمان سلامة الجميع.</p>
+            </section>
 
-        <section style="margin-top: 50px;">
-            <h2>📢 إخلاء المسؤولية</h2>
-            <div class="card" style="border-color: #ef4444; background: #2d1616;">
-                <p>بوت OP BOT هو أداة ترفيهية وإدارية. العملات الرقمية المستخدمة داخل البوت (Credits) هي عملات وهمية لا يمكن استبدالها بأموال حقيقية. المطور غير مسؤول عن أي نزاعات مالية وهمية تحدث بين الأعضاء داخل السيرفرات.</p>
-            </div>
-        </section>
+            <section class="card" style="border-right-color: #ef4444;">
+                <h2 style="color: #ef4444;">📢 إخلاء المسؤولية</h2>
+                <p>بوت OP BOT هو أداة ترفيهية. العملات (Credits) وهمية ولا يمكن استبدالها بأموال حقيقية. المطور غير مسؤول عن أي نزاعات بين الأعضاء.</p>
+            </section>
+        </div>
     </div>
 
-    <footer style="text-align: center; padding: 40px; color: #8b949e; border-top: 1px solid #163b3b;">
+    <footer>
+        <div style="margin-bottom: 20px;">
+            <strong style="color: var(--main);">OP BOT</strong> - القوة بين يديك
+        </div>
         جميع الحقوق محفوظة لـ OP BOT &copy; 2026
     </footer>
 </body>
