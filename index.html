@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OP BOT | التحقق من المستخدم</title>
+    <style>
+        :root { --main: #4ade80; --bg: #062b2b; }
+        body { background: var(--bg); color: white; font-family: 'Segoe UI', sans-serif; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; overflow: hidden; }
+        .verify-card { background: #0a3a3a; padding: 40px; border-radius: 20px; text-align: center; border: 2px solid var(--main); box-shadow: 0 0 30px rgba(74, 222, 128, 0.2); width: 90%; max-width: 400px; }
+        .logo { width: 120px; height: 120px; border-radius: 50%; border: 3px solid var(--main); margin-bottom: 20px; }
+        .btn { background: var(--main); color: black; padding: 15px 40px; text-decoration: none; border-radius: 10px; font-weight: bold; cursor: pointer; display: inline-block; transition: 0.3s; border: none; font-size: 1.1rem; }
+        .btn:hover { transform: translateY(-3px); box-shadow: 0 5px 15px var(--main); }
+        .checkbox-area { background: rgba(0,0,0,0.2); padding: 15px; border-radius: 10px; margin-bottom: 20px; display: flex; align-items: center; justify-content: center; gap: 12px; }
+        input[type="checkbox"] { width: 22px; height: 22px; cursor: pointer; accent-color: var(--main); }
+    </style>
+</head>
+<body>
+    <div class="verify-card">
+        <img src="logo.jpg" class="logo" alt="OP BOT">
+        <h2>نظام حماية OP BOT</h2>
+        <p style="color: #cbd5e1;">يرجى تأكيد هويتك للوصول إلى الموقع الرسمي</p>
+        <div class="checkbox-area">
+            <input type="checkbox" id="robotCheck">
+            <label for="robotCheck" style="font-size: 1.1rem; cursor: pointer;">أنا لست روبوت</label>
+        </div>
+        <button onclick="startVerification()" class="btn">دخول الموقع</button>
+    </div>
+
+    <script>
+        function startVerification() {
+            const isChecked = document.getElementById('robotCheck').checked;
+            if (isChecked) {
+                window.location.href = "home.html";
+            } else {
+                alert("يا بطل، لازم تضغط على المربع الأول!");
+            }
+        }
+    </script>
+</body>
+</html>

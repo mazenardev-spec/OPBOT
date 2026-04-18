@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>أوامر OP BOT | القائمة الكاملة</title>
+    <style>
+        :root { --main: #4ade80; --bg: #062b2b; }
+        body { background: var(--bg); color: white; font-family: 'Segoe UI', sans-serif; margin: 0; padding: 20px; }
+        .search-container { text-align: center; margin: 40px 0; }
+        #searchBox { padding: 15px; width: 100%; max-width: 500px; border-radius: 10px; border: none; font-size: 1rem; outline: none; background: #0a3a3a; color: white; border: 1px solid var(--main); }
+        .cmd-table { width: 100%; max-width: 1000px; margin: auto; border-collapse: collapse; background: #0a3a3a; border-radius: 15px; overflow: hidden; }
+        th, td { padding: 18px; text-align: right; border-bottom: 1px solid #ffffff11; }
+        th { background: var(--main); color: black; font-size: 1.1rem; }
+        tr:hover { background: #0e4d4d; }
+        .badge { background: var(--main); color: black; padding: 3px 8px; border-radius: 5px; font-size: 0.8rem; font-weight: bold; }
+        .nav-back { text-align: center; margin-bottom: 20px; }
+        .nav-back a { color: var(--main); text-decoration: none; font-weight: bold; }
+    </style>
+</head>
+<body>
+
+    <div class="nav-back"><a href="home.html">⬅️ العودة للرئيسية</a></div>
+
+    <div class="search-container">
+        <h1 style="color: var(--main);">قائمة أوامر OP BOT 📜</h1>
+        <input type="text" id="searchBox" onkeyup="searchFunction()" placeholder="ابحث عن أمر (مثال: ban)...">
+    </div>
+
+    <table class="cmd-table" id="cmdTable">
+        <thead>
+            <tr>
+                <th>الأمر</th>
+                <th>الوصف / الشرح</th>
+                <th>الفئة</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td>/credits</td><td>عرض رصيدك الحالي من العملات الوهمية</td><td><span class="badge">💰 بنك</span></td></tr>
+            <tr><td>/daily</td><td>استلام الراتب اليومي المجاني</td><td><span class="badge">💰 بنك</span></td></tr>
+            <tr><td>/transfer</td><td>تحويل رصيد من حسابك لحساب شخص آخر</td><td><span class="badge">💰 بنك</span></td></tr>
+            <tr><td>/top</td><td>عرض قائمة أغنى 10 أشخاص في السيرفر</td><td><span class="badge">💰 بنك</span></td></tr>
+            <tr><td>/rob</td><td>محاولة سرقة رصيد من عضو آخر (نسبة نجاح وفشل)</td><td><span class="badge">💰 بنك</span></td></tr>
+            <tr><td>/work</td><td>القيام بمهمة صغيرة للحصول على مبلغ عشوائي</td><td><span class="badge">💰 بنك</span></td></tr>
+            <tr><td>/gamble</td><td>نظام المراهنة (استخدمه بحذر!)</td><td><span class="badge">💰 بنك</span></td></tr>
+            <tr><td>/pay</td><td>دفع مبالغ مقابل خدمات معينة داخل البوت</td><td><span class="badge">💰 بنك</span></td></tr>
+            <tr><td>/shop</td><td>فتح المتجر لشراء رتب أو مميزات بالرصيد</td><td><span class="badge">💰 بنك</span></td></tr>
+            <tr><td>/bank-info</td><td>معرفة إحصائيات البنك في السيرفر</td><td><span class="badge">💰 بنك</span></td></tr>
+
+            <tr><td>/ban</td><td>حظر عضو من السيرفر نهائياً</td><td><span class="badge">🛡️ إدارة</span></td></tr>
+            <tr><td>/unban</td><td>إلغاء الحظر عن عضو معين</td><td><span class="badge">🛡️ إدارة</span></td></tr>
+            <tr><td>/kick</td><td>طرد عضو من السيرفر</td><td><span class="badge">🛡️ إدارة</span></td></tr>
+            <tr><td>/mute</td><td>إسكات عضو ومنعه من الكتابة</td><td><span class="badge">🛡️ إدارة</span></td></tr>
+            <tr><td>/unmute</td><td>إلغاء الميوت عن عضو</td><td><span class="badge">🛡️ إدارة</span></td></tr>
+            <tr><td>/clear</td><td>مسح عدد محدد من الرسائل (حتى 100 رسالة)</td><td><span class="badge">🛡️ إدارة</span></td></tr>
+            <tr><td>/set-logs</td><td>تحديد غرفة لإرسال سجلات السيرفر (Logs)</td><td><span class="badge">🛡️ إدارة</span></td></tr>
+            <tr><td>/lock</td><td>قفل الروم ومنع الجميع من الكتابة</td><td><span class="badge">🛡️ إدارة</span></td></tr>
+            <tr><td>/unlock</td><td>فتح الروم مرة أخرى</td><td><span class="badge">🛡️ إدارة</span></td></tr>
+            <tr><td>/slowmode</td><td>تحديد وقت انتظار بين كل رسالة ورسالة</td><td><span class="badge">🛡️ إدارة</span></td></tr>
+            <tr><td>/give-role</td><td>إعطاء رتبة معينة لعضو</td><td><span class="badge">🛡️ إدارة</span></td></tr>
+            <tr><td>/remove-role</td><td>سحب رتبة من عضو</td><td><span class="badge">🛡️ إدارة</span></td></tr>
+            <tr><td>/nick</td><td>تغيير اسم عضو داخل السيرفر</td><td><span class="badge">🛡️ إدارة</span></td></tr>
+            <tr><td>/move</td><td>سحب عضو لغرفة صوتية أخرى</td><td><span class="badge">🛡️ إدارة</span></td></tr>
+            <tr><td>/hide</td><td>إخفاء الروم عن الجميع</td><td><span class="badge">🛡️ إدارة</span></td></tr>
+
+            <tr><td>/xo</td><td>لعب لعبة XO مع صديق</td><td><span class="badge">🎮 ترفيه</span></td></tr>
+            <tr><td>/snake</td><td>لعب لعبة الثعبان الشهيرة داخل ديسكورد</td><td><span class="badge">🎮 ترفيه</span></td></tr>
+            <tr><td>/rps</td><td>حجرة ورقة مقص ضد البوت</td><td><span class="badge">🎮 ترفيه</span></td></tr>
+            <tr><td>/fast</td><td>لعبة كتابة الكلمات السريعة لتحدي السرعة</td><td><span class="badge">🎮 ترفيه</span></td></tr>
+            <tr><td>/math</td><td>حل مسائل رياضية للحصول على جوائز</td><td><span class="badge">🎮 ترفيه</span></td></tr>
+            <tr><td>/meme</td><td>عرض ميمز عشوائية مضحكة</td><td><span class="badge">🎮 ترفيه</span></td></tr>
+            <tr><td>/roll</td><td>رمي النرد للحصول على رقم عشوائي</td><td><span class="badge">🎮 ترفيه</span></td></tr>
+            <tr><td>/8ball</td><td>اسأل البوت سؤالاً وسيجيبك بشكل عشوائي</td><td><span class="badge">🎮 ترفيه</span></td></tr>
+            <tr><td>/avatar</td><td>عرض صورة البروفايل الخاصة بك أو بعضو آخر</td><td><span class="badge">🎮 ترفيه</span></td></tr>
+            <tr><td>/joke</td><td>أمر يقول لك نكتة عشوائية</td><td><span class="badge">🎮 ترفيه</span></td></tr>
+            <tr><td>/iq</td><td>قياس نسبة الذكاء (للمزاح فقط)</td><td><span class="badge">🎮 ترفيه</span></td></tr>
+            <tr><td>/ship</td><td>قياس نسبة التوافق بين شخصين</td><td><span class="badge">🎮 ترفيه</span></td></tr>
+            <tr><td>/kill</td><td>أمر ترفيهي لقتل عضو بطريقة مضحكة</td><td><span class="badge">🎮 ترفيه</span></td></tr>
+            <tr><td>/slap</td><td>صفع عضو آخر في الشات</td><td><span class="badge">🎮 ترفيه</span></td></tr>
+            <tr><td>/hug</td><td>إرسال حضن افتراضي لعضو</td><td><span class="badge">🎮 ترفيه</span></td></tr>
+            <tr><td>/coinflip</td><td>لعبة ملك وكتابة</td><td><span class="badge">🎮 ترفيه</span></td></tr>
+            <tr><td>/hack</td><td>محاكاة وهمية لاختراق حساب عضو (للمزاح)</td><td><span class="badge">🎮 ترفيه</span></td></tr>
+            <tr><td>/fact</td><td>إعطاؤك معلومة حقيقية وغريبة</td><td><span class="badge">🎮 ترفيه</span></td></tr>
+            <tr><td>/google</td><td>البحث عن شيء في جوجل عبر ديسكورد</td><td><span class="badge">🎮 ترفيه</span></td></tr>
+            <tr><td>/color</td><td>عرض لون معين عبر كود الـ Hex</td><td><span class="badge">🎮 ترفيه</span></td></tr>
+
+            <tr><td>/help</td><td>عرض قائمة المساعدة الكاملة</td><td><span class="badge">⚙️ عام</span></td></tr>
+            <tr><td>/ping</td><td>قياس سرعة استجابة البوت حالياً</td><td><span class="badge">⚙️ عام</span></td></tr>
+            <tr><td>/server</td><td>عرض معلومات مفصلة عن السيرفر</td><td><span class="badge">⚙️ عام</span></td></tr>
+            <tr><td>/user</td><td>عرض معلومات عن حساب ديسكورد الخاص بك</td><td><span class="badge">⚙️ عام</span></td></tr>
+            <tr><td>/botinfo</td><td>عرض إحصائيات البوت وموعد برمجته</td><td><span class="badge">⚙️ عام</span></td></tr>
+            <tr><td>/invite</td><td>الحصول على رابط دعوة البوت</td><td><span class="badge">⚙️ عام</span></td></tr>
+            <tr><td>/support</td><td>رابط سيرفر الدعم الفني للبوت</td><td><span class="badge">⚙️ عام</span></td></tr>
+            <tr><td>/uptime</td><td>لمعرفة منذ متى يعمل البوت دون انقطاع</td><td><span class="badge">⚙️ عام</span></td></tr>
+            <tr><td>/roles</td><td>عرض جميع الرتب الموجودة في السيرفر</td><td><span class="badge">⚙️ عام</span></td></tr>
+            <tr><td>/members</td><td>معرفة عدد الأعضاء المتصلين حالياً</td><td><span class="badge">⚙️ عام</span></td></tr>
+            <tr><td>/id</td><td>عرض الـ ID الخاص بك أو بعضو معين</td><td><span class="badge">⚙️ عام</span></td></tr>
+            <tr><td>/remind</td><td>طلب من البوت تذكيرك بشيء بعد وقت معين</td><td><span class="badge">⚙️ عام</span></td></tr>
+            <tr><td>/vote</td><td>رابط التصويت للبوت في قوائم البوتات</td><td><span class="badge">⚙️ عام</span></td></tr>
+            <tr><td>/website</td><td>رابط هذا الموقع الرسمي</td><td><span class="badge">⚙️ عام</span></td></tr>
+            <tr><td>/feedback</td><td>إرسال اقتراح لمطور البوت مباشرة</td><td><span class="badge">⚙️ عام</span></td></tr>
+        </tbody>
+    </table>
+
+    <script>
+        function searchFunction() {
+            var input, filter, table, tr, td, i, txtValue;
+            input = document.getElementById("searchBox");
+            filter = input.value.toUpperCase();
+            table = document.getElementById("cmdTable");
+            tr = table.getElementsByTagName("tr");
+            for (i = 1; i < tr.length; i++) {
+                td = tr[i].getElementsByTagName("td")[0];
+                if (td) {
+                    txtValue = td.textContent || td.innerText;
+                    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                        tr[i].style.display = "";
+                    } else {
+                        tr[i].style.display = "none";
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+</html>
