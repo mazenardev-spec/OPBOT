@@ -4,14 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <title>OPBOT</title>
+    <title>OP BOT | الموقع الرسمي</title>
     
-    <meta name="description" content="موقع OP BOT الرسمي - أداة متطورة لإدارة وتأمين سيرفرات الديسكورد بكفاءة عالية.">
+    <meta name="application-name" content="OP BOT">
+    <meta name="apple-mobile-web-app-title" content="OP BOT">
+    
+    <meta name="description" content="OP BOT - أداة متطورة لإدارة وتأمين سيرفرات الديسكورد بكفاءة عالية. نظام حماية متكامل وسرعة في الأداء.">
 
     <meta name="google-site-verification" content="crbvYC1Cw7BUhYRCc7BYcpw_Q4F6ecmTPgNO6VjLcxc" />
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "OP BOT",
+      "alternateName": "أOPBOT",
+      "url": "https://opbot.duckdns.org/"
+    }
+    </script>
     
     <style>
-        /* (تم الاحتفاظ بنفس تنسيقاتك) */
+        /* التنسيقات بتاعتك الرهيبة (بدون تغيير) */
         :root { --main: #4ade80; --bg: #062b2b; }
         
         body { 
@@ -114,7 +127,7 @@
 <body>
 
     <div class="verify-card">
-        <img src="logo.jpg" class="logo" alt="OP BOT">
+        <img src="logo.jpg" class="logo" alt="OP BOT Logo">
         <h2>نظام حماية OP BOT</h2>
         <p>يرجى تأكيد هويتك للوصول إلى الموقع الرسمي</p>
         
@@ -130,6 +143,7 @@
         function startVerification() {
             const isChecked = document.getElementById('robotCheck').checked;
             if (isChecked) {
+                // هينقلك لصفحة الهوم
                 window.location.href = "home.html";
             } else {
                 alert("يا بطل، لازم تضغط على المربع الأول!");
